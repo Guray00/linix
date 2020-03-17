@@ -1,16 +1,38 @@
 #!/bin/bash
-sudo su
-echo "Hi, are you using debian-based distro? [y/n]"
-read so
-if [ $so == "y"]; then
-	echo "[ ] Installing git..."
-	sudo apt-get install git
-	echo "[x] Git installed."
-	sudo apt-get install snapd
-	echo "Are you using plasma (kde)? [y/n]"
-	
-	read de
-	if [$de == "y"]; then
-	fi
-fi
 
+
+echo ""
+echo ""
+
+echo "========================================================================"
+echo "========================================================================"
+echo "                   _       _____  _   _  _____ __   __                  "
+echo "                  | |     |_   _|| \ | ||_   _|\ \ / /                  "
+echo "                  | |       | |  |  \| |  | |   \ V /                   "
+echo "                  | |       | |  |     |  | |    > <                    "
+echo "                  | |____  _| |_ | |\  | _| |_  / . \                   "
+echo "                  |______||_____||_| \_||_____|/_/ \_\                  "
+echo "                                                                        "     
+echo "========================================================================"
+echo "========================================================================"
+
+echo ""
+echo ""
+
+
+
+read -p "Hi, are you using debian-based distro? (Ubuntu, Mint, Deppin etc..) [y/n] " so
+
+if [[ "$so" == "y" ]]; then
+     read -p "Do you want to install dev-tools? [y/n] " dtools
+     
+     if [[ "$dtools" == "y" ]]; then
+        echo "ok"
+     else
+        echo "Strings are not equal."
+     fi
+     
+
+else
+    echo "Strings are not equal."
+fi
