@@ -1,0 +1,11 @@
+{
+"name":"libreoffice",
+"display_name": "LibreOffice",
+"ppa":"libreoffice/ppa",
+"method": "ppa"
+}
+
+
+
+
+
