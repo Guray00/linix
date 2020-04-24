@@ -11,7 +11,34 @@ from installer import installerMain
 from clint.textui import puts, colored
 
 
+rows, columns = os.popen('stty size', 'r').read().split()
+	
+def distancePrint(string):
+	distanceSize = int((int(columns) - len(string))/2)
+	d = ' '*distanceSize
+	print(d+string) 
+	
+def printLogo():
+	distanceSize = (int(columns) - 30-4)/2
 
+	distance      = ' '*int(distanceSize)
+	separator     = colored.red('='*int(distanceSize))
+
+
+
+	print(distance +"  "+"    __    _____   _______  __"+"  ")
+	print(distance +"  "+"   / /   /  _/ | / /  _/ |/ /"+"  ")
+	print(separator+"  "+"  / /    / //  |/ // / |   / "+"  "+separator)
+	print(separator+"  "+" / /____/ // /|  // / /   |  "+"  "+separator)
+	print(distance +"  "+"/_____/___/_/ |_/___//_/|_|  "+"  ")
+	print(distance +" "+ colored.red("Your favourite bash installer\n"))
+
+	distancePrint("If u don't know what u are doing, well, this is the right place!")
+	distancePrint("Linix is a free-software simple as f*ck for fast configuration of")
+	distancePrint("your SO, we both know that if u are here you destroyed something...")
+	distancePrint("Therefore come on and config your machine (and pay attention next time)\n")
+	
+	
 def questionMaker(names, ID,  message, category):
 	choices = []
 	
@@ -46,33 +73,20 @@ def questionMaker(names, ID,  message, category):
 
 #########################################################################
 
-#f = Figlet(font='slant')
-#print (f.renderText('LINIX'))
+printLogo()
 
 
-rows, columns = os.popen('stty size', 'r').read().split()
-
-distanceSize = (int(columns) - 30-4)/2
-
-distance      = ' '*int(distanceSize)
-separator     = colored.red('='*int(distanceSize))
-
-
-
-print(distance +"  "+"    __    _____   _______  __"+"  ")
-print(distance +"  "+"   / /   /  _/ | / /  _/ |/ /"+"  ")
-print(separator+"  "+"  / /    / //  |/ // / |   / "+"  "+separator)
-print(separator+"  "+" / /____/ // /|  // / /   |  "+"  "+separator)
-print(distance +"  "+"/_____/___/_/ |_/___//_/|_|  "+"  ")
-print(distance + colored.red("Your favourite bash installer\n\n"))
-
+# CATEGORY SETUP
 basic = []
 dev = []
 gaming = []
 cloud = []
+graphics = []
 
-categoriesString = ["basic", "dev", "gaming", "cloud"]
+
+categoriesString = ["basic", "dev", "gaming", "cloud", "graphics"]
 categories = []
+
 
 for i in categoriesString:
 	tmp = {
@@ -82,6 +96,7 @@ for i in categoriesString:
 	categories.append(tmp)
 
 
+# IMPORTING JSONS
 for file in os.listdir("./software/dev"):
 	if file.endswith(".json"):
 		tmp = json.loads(open(os.path.join("./software/dev", file), "r").read())
@@ -101,7 +116,14 @@ for file in os.listdir("./software/cloud"):
 	if file.endswith(".json"):
 		tmp = json.loads(open(os.path.join("./software/cloud", file), "r").read())
 		cloud.append(tmp)
-		
+
+for file in os.listdir("./software/graphics"):
+	if file.endswith(".json"):
+		tmp = json.loads(open(os.path.join("./software/graphics", file), "r").read())
+		graphics.append(tmp)
+	
+	
+# SETTING UP GUI COLORS			
 style = style_from_dict({
     Token.Separator: '#FF0000',   #cc5454
     Token.QuestionMark: '#673ab7 bold',
@@ -113,14 +135,15 @@ style = style_from_dict({
 })
 
 
+# ASK CATEGORY
 answ = prompt(questionMaker(["Categories"], "categories", "Which categories are u interested in?", [categories]), style=style)
 
 
 
 software = []
-
 swHash = {}
 
+# GET THE LIST OF PROGRAMS FROM SELECTED CATEGORIES
 for i in answ["categories"]:
 
 	tmp = []
@@ -143,17 +166,24 @@ for i in answ["categories"]:
 		for j in cloud:
 			tmp.append(j)
 			swHash[j["display_name"]] = j
+			
+	elif (i == "graphics"):
+		for j in graphics:
+			tmp.append(j)
+			swHash[j["display_name"]] = j
+			
 	software.append(tmp)
 	
 	
-answ = prompt(questionMaker(["Basic", "Dev", "gaming", "cloud"], "software", "Which software do u wanna install?", software), style=style)
+# ASK FOR SPECIFIC SOFTWARE
+answ = prompt(questionMaker(["Basic", "Dev", "Gaming", "Cloud", "Graphics"], "software", "Which software do u wanna install?", software), style=style)
 
 software = []
 for i in answ["software"]:
 	software.append(swHash[i])
 	
 
-
+# RUNS THE INSTALLER
 installerMain(software)
 
 
