@@ -1,0 +1,11 @@
+{
+"name":"telegram",
+"display_name": "Telegram",
+"ppa":"atareao/telegram",
+"method": "ppa"
+}
+
+
+
+
+

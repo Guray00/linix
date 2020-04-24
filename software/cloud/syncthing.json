@@ -1,0 +1,11 @@
+{
+"name":"syncthing",
+"display_name": "Syncthing",
+"method": "source",
+"pgp": "curl -s https://syncthing.net/release-key.txt | sudo apt-key add -", 
+"deb": "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main",
+"dest": "/etc/apt/sources.list.d/syncthing.list"
+}
+
+
+
