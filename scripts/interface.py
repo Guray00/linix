@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 
-
-from __future__ import print_function, unicode_literals
 from PyInquirer import style_from_dict, Token, prompt, Separator
-#from pprint import pprint
-#from pyfiglet import Figlet
 import json
 import os
-from installer import installerMain
+import sys
 from clint.textui import puts, colored
 
+DITRO = sys.argv[2]
 
 rows, columns = os.popen('stty size', 'r').read().split()
 	
@@ -186,7 +183,15 @@ try:
 		
 
 	# RUNS THE INSTALLER
-	installerMain(software, "debian")
+	#installerMain(software, "debian")
+
+
+	platform = "deb"
+
+	if (platform == "deb"):
+		from debInstaller import debInstaller
+
+		debInstaller(software)
 
 
 	

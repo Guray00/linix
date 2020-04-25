@@ -91,7 +91,7 @@ fi
 
 
 clear
-python3 ./scripts/interface.py
+python3 ./scripts/interface.py $DISTRO
 
 #ONLY FOR DEV
 if [ $DISTRO == "DEBIAN" ]
