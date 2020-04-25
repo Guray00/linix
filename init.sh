@@ -94,6 +94,7 @@ else
 		rm $PYTHONAPT >>.log 2>&1
 		cp ./usr/lib/python3/dist-packages ./.venv/lib/python3.6/ -r >>.log 2>&1
 		rm -rd ./usr >>.log 2>&1
+		
 	fi
 	if [ $DISTRO == "ARCH" ]
 	then
