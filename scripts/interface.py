@@ -6,8 +6,8 @@ import os
 import sys
 from clint.textui import puts, colored
 
-DISTRO = sys.argv.index("--distro")+1
-print(DISTRO)
+DISTRO = sys.argv[sys.argv.index("--distro")+1]
+
 rows, columns = os.popen('stty size', 'r').read().split()
 	
 def distancePrint(string):
@@ -186,9 +186,7 @@ try:
 	#installerMain(software, "debian")
 
 
-	platform = "deb"
-
-	if (platform == "deb"):
+	if (DISTRO == "DEBIAN"):
 		from debInstaller import debInstaller
 
 		debInstaller(software)

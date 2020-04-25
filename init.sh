@@ -95,6 +95,7 @@ else
 		LASTPY=$(find ./.venv/lib | grep python)
 		cp ./usr/lib/python3/dist-packages/* ./.venv/lib/$LASTPY/site-packages/ -r >>.log 2>&1
 		rm -rd ./usr >>.log 2>&1
+		
 	fi
 	if [ $DISTRO == "ARCH" ]
 	then
