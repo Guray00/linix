@@ -92,10 +92,11 @@ else
 		PYTHONAPT=$(find ./ |grep python3-apt) 
 		dpkg-deb -xv $PYTHONAPT ./ >>.log 2>&1
 		rm $PYTHONAPT >>.log 2>&1
-		LASTPY=$(find ./.venv/lib | grep python)
-		cp ./usr/lib/python3/dist-packages/* ./.venv/lib/$LASTPY/site-packages/ -r >>.log 2>&1
+		for LASTPY in $(ls ./.venv/lib | grep python)
+		do
+			cp ./usr/lib/python3/dist-packages/. ./.venv/lib/$LASTPY/site-packages/ -R >>.log 2>&1
+		done
 		rm -rd ./usr >>.log 2>&1
-		
 	fi
 	if [ $DISTRO == "ARCH" ]
 	then
