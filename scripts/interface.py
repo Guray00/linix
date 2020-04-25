@@ -6,8 +6,8 @@ import os
 import sys
 from clint.textui import puts, colored
 
-DITRO = sys.argv[2]
-
+DISTRO = sys.argv.index("--distro")+1
+print(DISTRO)
 rows, columns = os.popen('stty size', 'r').read().split()
 	
 def distancePrint(string):

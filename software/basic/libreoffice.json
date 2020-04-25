@@ -1,7 +1,7 @@
 {
 "name":"libreoffice",
 "display_name": "LibreOffice",
-"ppa":"libreoffice/ppa",
+"ppa":"ppa:libreoffice/ppa",
 "method": "ppa"
 }
 

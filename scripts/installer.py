@@ -11,20 +11,20 @@ class Installer:
     errors           = []
     pending = {}
     
+    # PRINT ERROR MESSAGE
     def errorMessage(self, i):
 	    print(colored.red("Something went wrong, i'm sorry..."))
 	    self.errors.append(i)
 
-
-    def MUST4WORK(self):
-        return
-
+ 
+    # PRINT FANCY INSTALLING
     def printInstalling(self, i):
         string = "  Installing "+i["name"]+"...  "
         distanceSize = int((int(columns) - len(string))/2)
         d = '='*distanceSize
         print("\n"+colored.yellow(d+string+d))
-    		
+    
+    #PRINT AT THE END OF THE PROGRAMS SOME STATS
     def printResults(self):							# print the result of the program, like
         if (len(self.pkgs) > 0 ):	                # installed softwares, errors ecc 
             self.printSeparator()
@@ -39,21 +39,30 @@ class Installer:
         
         print("\n")
 
-    def installedCheck(self, i):							# checks if a program is already installed
-        return
-
-    def checkInstallMethod(self, i):						# checking the installation method (debian)
-        return False
-
-    def installAll(self):
-        return False
-
+    # PRINT FANCY SEPARATOR
     def printSeparator(self):
         separatorFull = colored.red('='*int(columns))
         print("\n"+separatorFull)
 
+    # INSTALL MUST HAVE DEPENDECIES (-> OVERRIDE <-)
+    def MUST4WORK(self):
+        return False
+
+    #CHECKS IS SW IS INSTALLED (->OVERRIDE<-)
+    def installedCheck(self, i):							# checks if a program is already installed
+        return False
+
+    #CHECKS THE RIGHT INSTALLATION METHOD (-> OVERRIDE <-) 
+    def checkInstallMethod(self, i):						# checking the installation method (debian)
+        return False
+
+    #INSTALL ALL PROGRAMS (-> OVERRIDE <-)
+    def installAll(self):
+        return False
+
+  
 ################################################
-#                    INIT
+#                    INIT (NO override)
 ################################################
 
     def __init__(self, software):
