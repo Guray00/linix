@@ -1,0 +1,168 @@
+apt 1.6.12 (amd64)
+./init.sh: line 15: pacman: command not found
+Package: python3
+Status: install ok installed
+Priority: important
+Section: python
+Installed-Size: 187
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: allowed
+Source: python3-defaults
+Version: 3.6.7-1~18.04
+Replaces: python3-minimal (<< 3.1.2-2)
+Provides: python3-profiler
+Depends: python3.6 (>= 3.6.7-1~), libpython3-stdlib (= 3.6.7-1~18.04)
+Pre-Depends: python3-minimal (= 3.6.7-1~18.04)
+Suggests: python3-doc (>= 3.6.7-1~18.04), python3-tk (>= 3.6.7-1~), python3-venv (>= 3.6.7-1~18.04)
+Description: interactive high-level object-oriented language (default python3 version)
+ Python, the high-level, interactive object oriented language,
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package is a dependency package, which depends on Debian's default
+ Python 3 version (currently v3.6).
+Homepage: https://www.python.org/
+Cnf-Extra-Commands: python
+Cnf-Priority-Bonus: 5
+Original-Maintainer: Matthias Klose <doko@debian.org>
+Package: python3-pip
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 586
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Source: python-pip
+Version: 9.0.1-2.3~ubuntu1.18.04.1
+Depends: ca-certificates, python3-distutils, python-pip-whl (= 9.0.1-2.3~ubuntu1.18.04.1), python3:any (>= 3.4~)
+Recommends: build-essential, python3-dev (>= 3.2), python3-setuptools, python3-wheel
+Description: Python package installer
+ pip is the Python package installer.  It integrates with virtualenv, doesn't
+ do partial installs, can save package state for replaying, can install from
+ non-egg sources, and can install from version control repositories.
+ .
+ This is the Python 3 version of the package.
+Homepage: https://pip.pypa.io/en/stable/
+Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: virtualenv in /home/ettore/.local/lib/python3.6/site-packages (20.0.14)
+Requirement already satisfied: distlib<1,>=0.3.0 in /home/ettore/.local/lib/python3.6/site-packages (from virtualenv) (0.3.0)
+Requirement already satisfied: importlib-metadata<2,>=0.12; python_version < "3.8" in /home/ettore/.local/lib/python3.6/site-packages (from virtualenv) (1.5.1)
+Requirement already satisfied: appdirs<2,>=1.4.3 in /home/ettore/.local/lib/python3.6/site-packages (from virtualenv) (1.4.3)
+Requirement already satisfied: filelock<4,>=3.0.0 in /home/ettore/.local/lib/python3.6/site-packages (from virtualenv) (3.0.12)
+Requirement already satisfied: importlib-resources<2,>=1.0; python_version < "3.7" in /home/ettore/.local/lib/python3.6/site-packages (from virtualenv) (1.4.0)
+Requirement already satisfied: six<2,>=1.9.0 in /home/ettore/.local/lib/python3.6/site-packages (from virtualenv) (1.14.0)
+Requirement already satisfied: zipp>=0.5 in /home/ettore/.local/lib/python3.6/site-packages (from importlib-metadata<2,>=0.12; python_version < "3.8"->virtualenv) (3.1.0)
+created virtual environment CPython3.6.9.final.0-64 in 12998ms
+  creator CPython3Posix(dest=/mnt/c/Users/the_E/OneDrive/Desktop/Dev/linix/venv, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/ettore/.local/share/virtualenv/seed-app-data/v1.0.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+Processing /home/ettore/.cache/pip/wheels/e6/8d/ae/80f0435a2ae1e23dfa586106a44a0a32968d553e6fcf61d8fb/clint-0.5.1-py3-none-any.whl
+Processing /home/ettore/.cache/pip/wheels/e1/32/91/afe2cabe6f77819de11759f2a07d538cd521ef3a9dd81ba0b4/pathlib-1.0.1-py3-none-any.whl
+Collecting installer
+  Using cached installer-0.1.1-py2.py3-none-any.whl (7.3 kB)
+Processing /home/ettore/.cache/pip/wheels/79/8e/a2/5043c19fe89c93e2ae1adb66d066ff743057e70dd0ccbed62c/PyInquirer-1.0.3-py3-none-any.whl
+Processing /home/ettore/.cache/pip/wheels/66/0a/c0/b28d8c7e7a0cfa9117a1f2fa66bcfeb95a40aff78a28e261eb/args-0.1.0-py3-none-any.whl
+Collecting packaging
+  Using cached packaging-20.3-py2.py3-none-any.whl (37 kB)
+Processing /home/ettore/.cache/pip/wheels/6e/e8/db/c73dae4867666e89ba3cfbc4b5c092446f0e584eda6f409cbb/distlib-0.3.0-cp36-none-any.whl
+Collecting vistir[spinner]
+  Using cached vistir-0.5.0-py2.py3-none-any.whl (52 kB)
+Collecting packagebuilder
+  Using cached packagebuilder-0.1.0-py2.py3-none-any.whl (8.4 kB)
+Collecting requirementslib
+  Using cached requirementslib-1.5.7-py2.py3-none-any.whl (107 kB)
+Requirement already satisfied: setuptools in ./venv/lib/python3.6/site-packages (from installer->-r ./venv-requirements.txt (line 3)) (46.1.1)
+Collecting pip-shims
+  Using cached pip_shims-0.5.2-py2.py3-none-any.whl (34 kB)
+Collecting regex>=2016.11.21
+  Using cached regex-2020.4.4-cp36-cp36m-manylinux2010_x86_64.whl (679 kB)
+Collecting prompt-toolkit==1.0.14
+  Using cached prompt_toolkit-1.0.14-py3-none-any.whl (248 kB)
+Collecting Pygments>=2.2.0
+  Using cached Pygments-2.6.1-py3-none-any.whl (914 kB)
+Collecting six
+  Using cached six-1.14.0-py2.py3-none-any.whl (10 kB)
+Collecting pyparsing>=2.0.2
+  Using cached pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+Collecting colorama!=0.4.2,>=0.3.4
+  Using cached colorama-0.4.3-py2.py3-none-any.whl (15 kB)
+Collecting yaspin; extra == "spinner"
+  Using cached yaspin-0.16.0-py2.py3-none-any.whl (18 kB)
+Collecting appdirs
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+Collecting plette[validation]
+  Using cached plette-0.2.3-py2.py3-none-any.whl (11 kB)
+Collecting python-dateutil
+  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting tomlkit>=0.5.3
+  Using cached tomlkit-0.6.0-py2.py3-none-any.whl (31 kB)
+Collecting orderedmultidict
+  Using cached orderedmultidict-1.0.1-py2.py3-none-any.whl (11 kB)
+Collecting cached-property
+  Using cached cached_property-1.5.1-py2.py3-none-any.whl (6.0 kB)
+Collecting pep517>=0.5.0
+  Using cached pep517-0.8.2-py2.py3-none-any.whl (18 kB)
+Collecting requests
+  Using cached requests-2.23.0-py2.py3-none-any.whl (58 kB)
+Collecting attrs>=18.2
+  Using cached attrs-19.3.0-py2.py3-none-any.whl (39 kB)
+Requirement already satisfied: wheel in ./venv/lib/python3.6/site-packages (from pip-shims->installer->-r ./venv-requirements.txt (line 3)) (0.34.2)
+Requirement already satisfied: pip in ./venv/lib/python3.6/site-packages (from pip-shims->installer->-r ./venv-requirements.txt (line 3)) (20.0.2)
+Collecting wcwidth
+  Using cached wcwidth-0.1.9-py2.py3-none-any.whl (19 kB)
+Processing /home/ettore/.cache/pip/wheels/57/73/88/653dda2eaa03ee38e7ab10f48ddaadd192fadda426bb5c0bdf/Cerberus-1.3.2-py3-none-any.whl
+Collecting importlib_metadata; python_version < "3.8"
+  Using cached importlib_metadata-1.6.0-py2.py3-none-any.whl (30 kB)
+Collecting toml
+  Using cached toml-0.10.0-py2.py3-none-any.whl (25 kB)
+Collecting zipp; python_version < "3.8"
+  Using cached zipp-3.1.0-py3-none-any.whl (4.9 kB)
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1
+  Using cached urllib3-1.25.9-py2.py3-none-any.whl (126 kB)
+Collecting chardet<4,>=3.0.2
+  Using cached chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting certifi>=2017.4.17
+  Using cached certifi-2020.4.5.1-py2.py3-none-any.whl (157 kB)
+Collecting idna<3,>=2.5
+  Using cached idna-2.9-py2.py3-none-any.whl (58 kB)
+Installing collected packages: args, clint, pathlib, six, pyparsing, packaging, distlib, colorama, yaspin, vistir, pip-shims, appdirs, packagebuilder, tomlkit, cerberus, plette, python-dateutil, orderedmultidict, cached-property, zipp, importlib-metadata, toml, pep517, urllib3, chardet, certifi, idna, requests, attrs, requirementslib, installer, regex, wcwidth, prompt-toolkit, Pygments, PyInquirer
+Successfully installed PyInquirer-1.0.3 Pygments-2.6.1 appdirs-1.4.3 args-0.1.0 attrs-19.3.0 cached-property-1.5.1 cerberus-1.3.2 certifi-2020.4.5.1 chardet-3.0.4 clint-0.5.1 colorama-0.4.3 distlib-0.3.0 idna-2.9 importlib-metadata-1.6.0 installer-0.1.1 orderedmultidict-1.0.1 packagebuilder-0.1.0 packaging-20.3 pathlib-1.0.1 pep517-0.8.2 pip-shims-0.5.2 plette-0.2.3 prompt-toolkit-1.0.14 pyparsing-2.4.7 python-dateutil-2.8.1 regex-2020.4.4 requests-2.23.0 requirementslib-1.5.7 six-1.14.0 toml-0.10.0 tomlkit-0.6.0 urllib3-1.25.9 vistir-0.5.0 wcwidth-0.1.9 yaspin-0.16.0 zipp-3.1.0
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-apt amd64 1.6.5ubuntu0.2 [149 kB]
+Fetched 149 kB in 0s (422 kB/s)
+./
+./usr/
+./usr/lib/
+./usr/lib/python3/
+./usr/lib/python3/dist-packages/
+./usr/lib/python3/dist-packages/apt/
+./usr/lib/python3/dist-packages/apt/__init__.py
+./usr/lib/python3/dist-packages/apt/auth.py
+./usr/lib/python3/dist-packages/apt/cache.py
+./usr/lib/python3/dist-packages/apt/cdrom.py
+./usr/lib/python3/dist-packages/apt/debfile.py
+./usr/lib/python3/dist-packages/apt/package.py
+./usr/lib/python3/dist-packages/apt/progress/
+./usr/lib/python3/dist-packages/apt/progress/__init__.py
+./usr/lib/python3/dist-packages/apt/progress/base.py
+./usr/lib/python3/dist-packages/apt/progress/text.py
+./usr/lib/python3/dist-packages/apt/utils.py
+./usr/lib/python3/dist-packages/apt_inst.cpython-36m-x86_64-linux-gnu.so
+./usr/lib/python3/dist-packages/apt_inst.pyi
+./usr/lib/python3/dist-packages/apt_pkg.cpython-36m-x86_64-linux-gnu.so
+./usr/lib/python3/dist-packages/apt_pkg.pyi
+./usr/lib/python3/dist-packages/aptsources/
+./usr/lib/python3/dist-packages/aptsources/__init__.py
+./usr/lib/python3/dist-packages/aptsources/distinfo.py
+./usr/lib/python3/dist-packages/aptsources/distro.py
+./usr/lib/python3/dist-packages/aptsources/sourceslist.py
+./usr/lib/python3/dist-packages/python_apt-1.6.5_ubuntu0.2.egg-info
+./usr/share/
+./usr/share/doc/
+./usr/share/doc/python3-apt/
+./usr/share/doc/python3-apt/changelog.gz
+./usr/share/doc/python3-apt/copyright
