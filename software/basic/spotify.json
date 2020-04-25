@@ -1,0 +1,12 @@
+{
+"name":"spotify-client",
+"display_name": "Spotify",
+"method": "ppa",
+"key": "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4773BD5E130D1D45",
+"ppa": "\"deb http://repository.spotify.com stable non-free\"" 
+}
+
+
+
+
+

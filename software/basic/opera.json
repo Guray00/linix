@@ -3,7 +3,7 @@
 "display_name": "Opera",
 "method": "source",
 "pgp": "wget -O - http://deb.opera.com/archive.key | sudo apt-key add -", 
-"deb": "http://deb.opera.com/opera-stable/ stable non-free",
+"deb": "\"http://deb.opera.com/opera-stable/ stable non-free\"",
 "dest": "/etc/apt/sources.list.d/opera.list"
 }
 

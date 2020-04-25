@@ -1,7 +1,7 @@
 {
 "name":"telegram",
 "display_name": "Telegram",
-"ppa":"atareao/telegram",
+"ppa":"ppa:atareao/telegram",
 "method": "ppa"
 }
 

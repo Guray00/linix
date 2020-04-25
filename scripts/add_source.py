@@ -17,10 +17,11 @@ searchPhrase = sys.argv[1]
 
 os.system('grep "' + searchPhrase + '" '+ destination +' | wc -l > /tmp/linix')
 if (getTimes() == 0):
-	print(colored.green("string[Ok] Adding the source to the file"))
+	print(colored.green("[Ok] Adding the source to the file"))
 	command = "sudo sh -c 'echo \"deb " + searchPhrase + '" >> ' + destination + "'"
-	print("Running command: " + command)
-	os.system(command)
-	print("Done, continuing.")
+	
+	print(colored.blue("Running command: " + command))	
+	print(colored.green("Done, continuing."))
+	
 else:
 	print(colored.green("[NO] Source already added, continuing."))

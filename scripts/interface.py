@@ -35,7 +35,7 @@ def printLogo():
 
 	distancePrint("If u don't know what u are doing, well, this is the right place!")
 	distancePrint("Linix is a free-software simple as f*ck for fast configuration of")
-	distancePrint("your SO, we both know that if u are here you destroyed something...")
+	distancePrint("your OS, we both know that if u are here you destroyed something...")
 	distancePrint("Therefore come on and config your machine (and pay attention next time)\n")
 	
 	
@@ -75,6 +75,8 @@ def questionMaker(names, ID,  message, category):
 
 printLogo()
 
+#for key in a_dict:
+#	print(key, '->', a_dict[key])
 
 # CATEGORY SETUP
 basic = []
@@ -184,7 +186,7 @@ try:
 		
 
 	# RUNS THE INSTALLER
-	installerMain(software)
+	installerMain(software, "debian")
 
 
 	

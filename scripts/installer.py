@@ -7,6 +7,8 @@ from os import path
 from pathlib import Path
 from clint.textui import puts, colored
 
+
+OS = False
 cache = apt.Cache()
 cache.open()
 
@@ -45,12 +47,12 @@ def printResults():							# print the result of the program, like
 		pkgs.append(i["name"])
 	
 	if (len(pkgs) > 0 ):	
-		print("\n\n"+colored.green(str(len(pkgs)))+" programs had been installed: ")
+		print("\n"+colored.green(str(len(pkgs)))+" programs had been installed: ")
 		for i in pkgs:
 			print("   -"+i)
 
 	if (len(alreadyInstalled)>0):	
-			print("\n\n"+colored.blue(str(len(alreadyInstalled)))+" programs had been alredy installed: ")
+			print("\n"+colored.blue(str(len(alreadyInstalled)))+" programs had been alredy installed: ")
 			for i in alreadyInstalled:
 				print("   -"+i["name"])
 	
@@ -75,7 +77,13 @@ def installedCheck(i):							# checks if a program is already installed
 
 def ppaAdder(i):
 	try:
-		os.system("sudo add-apt-repository ppa:"+i["ppa"]+" -y")
+		command = i["key"]
+		os.system(command)
+	except:
+		pass
+
+	try:
+		os.system("sudo add-apt-repository "+i["ppa"]+" -y")
 	except:
 		errorMessage(i)
 
@@ -118,9 +126,12 @@ def checkInstallMethod(i):						# checking the installation method (debian)
 	except:
 		errorMessage(i)
 
-	return false
+	return False
 	
-def installerMain(software):
+def installerMain(software, platform):
+
+	#OS = platoform
+
 	rows, columns = os.popen('stty size', 'r').read().split()
 	separatorFull = colored.red('='*int(columns))
 	print(separatorFull)

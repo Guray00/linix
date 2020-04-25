@@ -1,0 +1,10 @@
+{
+"name":"chrome-gnome-shell",
+"display_name": "Chrome",
+"method":"dpkg",
+"dpkg": "/tmp/chrome.deb",
+"wget": "wget -O /tmp/chrome.deb \"https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb\""
+}
+
+
+
