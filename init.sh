@@ -29,11 +29,14 @@ fi
 
 
 #sudo apt install python3
+pip3 install virtualenv
 
-#pip3 install clint
-#pip3 instaln PyInquirer
+source ./linix_venv/bin/activate
 
-pip3 install -r requirements.txt
+#needed only for dev
+#pip3 install -r ./linix_venv/requirements.txt
 
 clear
 python3 ./scripts/interface.py
+
+deactivate
