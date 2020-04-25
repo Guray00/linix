@@ -30,7 +30,7 @@ if [ $DISTRO == "ARCH" ]
 then
 	pacman -Q "python3" >>.log 2>&1
 fi
- 
+
 
 if [ $? -ne 0 ]
 
