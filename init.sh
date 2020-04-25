@@ -71,8 +71,6 @@ then
 fi
 
 
-#sudo apt install python3
-
 
 pip3 install virtualenv >>.log 2>&1
 
