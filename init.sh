@@ -30,9 +30,10 @@ fi
 
 #sudo apt install python3
 
-pip3 install clint
-pip3 instaln PyInquirer
+#pip3 install clint
+#pip3 instaln PyInquirer
 
+pip3 install -r requirements.txt
 
 clear
 python3 ./scripts/interface.py

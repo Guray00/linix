@@ -136,56 +136,58 @@ style = style_from_dict({
 
 
 # ASK CATEGORY
-answ = prompt(questionMaker(["Categories"], "categories", "Which categories are u interested in?", [categories]), style=style)
+try:
+	answ = prompt(questionMaker(["Categories"], "categories", "Which categories are u interested in?", [categories]), style=style)
 
 
+	software = []
+	swHash = {}
 
-software = []
-swHash = {}
+	# GET THE LIST OF PROGRAMS FROM SELECTED CATEGORIES
+	for i in answ["categories"]:
 
-# GET THE LIST OF PROGRAMS FROM SELECTED CATEGORIES
-for i in answ["categories"]:
+		tmp = []
+		if (i == "basic"):
+			for j in basic:
+				tmp.append(j) 	
+				swHash[j["display_name"]] = j	
+		
+		elif (i == "dev"):
+			for j in dev:
+				tmp.append(j)
+				swHash[j["display_name"]] = j	
+		
+		elif (i == "gaming"):
+			for j in gaming:
+				tmp.append(j)
+				swHash[j["display_name"]] = j
+		
+		elif (i == "cloud"):
+			for j in cloud:
+				tmp.append(j)
+				swHash[j["display_name"]] = j
+				
+		elif (i == "graphics"):
+			for j in graphics:
+				tmp.append(j)
+				swHash[j["display_name"]] = j
+				
+		software.append(tmp)
+		
+		
+	# ASK FOR SPECIFIC SOFTWARE
+	answ = prompt(questionMaker(["Basic", "Dev", "Gaming", "Cloud", "Graphics"], "software", "Which software do u wanna install?", software), style=style)
 
-	tmp = []
-	if (i == "basic"):
-		for j in basic:
-			tmp.append(j) 	
-			swHash[j["display_name"]] = j	
+	software = []
+	for i in answ["software"]:
+		software.append(swHash[i])
+		
+
+	# RUNS THE INSTALLER
+	installerMain(software)
+
+
 	
-	elif (i == "dev"):
-		for j in dev:
-			tmp.append(j)
-			swHash[j["display_name"]] = j	
-	
-	elif (i == "gaming"):
-		for j in gaming:
-			tmp.append(j)
-			swHash[j["display_name"]] = j
-	
-	elif (i == "cloud"):
-		for j in cloud:
-			tmp.append(j)
-			swHash[j["display_name"]] = j
-			
-	elif (i == "graphics"):
-		for j in graphics:
-			tmp.append(j)
-			swHash[j["display_name"]] = j
-			
-	software.append(tmp)
-	
-	
-# ASK FOR SPECIFIC SOFTWARE
-answ = prompt(questionMaker(["Basic", "Dev", "Gaming", "Cloud", "Graphics"], "software", "Which software do u wanna install?", software), style=style)
-
-software = []
-for i in answ["software"]:
-	software.append(swHash[i])
-	
-
-# RUNS THE INSTALLER
-installerMain(software)
-
-
-	
-
+except KeyError:
+	print("Goodbye!")
+	exit(0)
