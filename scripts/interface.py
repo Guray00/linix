@@ -6,8 +6,7 @@ import os
 import sys
 from clint.textui import puts, colored
 
-DISTRO = sys.argv[sys.argv.index("--distro")+1]
-
+DISTRO = sys.argv[sys.argv.index("--distro")+1]				#gets the running distro
 rows, columns = os.popen('stty size', 'r').read().split()
 	
 def distancePrint(string):
@@ -25,8 +24,8 @@ def printLogo():
 
 	print(distance +"  "+"    __    _____   _______  __"+"  ")
 	print(distance +"  "+"   / /   /  _/ | / /  _/ |/ /"+"  ")
-	print(separator+"  "+"  / /    / //  |/ // / |   / "+"  "+separator)
-	print(separator+"  "+" / /____/ // /|  // / /   |  "+"  "+separator)
+	print(separator+"  "+"  / /    / //  |/ // / |   / "+"  "+separator+colored.red("="))
+	print(separator+"  "+" / /____/ // /|  // / /   |  "+"  "+separator+colored.red("="))
 	print(distance +"  "+"/_____/___/_/ |_/___//_/|_|  "+"  ")
 	print(distance +" "+ colored.red("Your favourite bash installer\n"))
 
@@ -34,7 +33,6 @@ def printLogo():
 	distancePrint("Linix is a free-software simple as f*ck for fast configuration of")
 	distancePrint("your OS, we both know that if u are here you destroyed something...")
 	distancePrint("Therefore come on and config your machine (and pay attention next time)\n")
-	
 	
 def questionMaker(names, ID,  message, category):
 	choices = []
@@ -66,14 +64,11 @@ def questionMaker(names, ID,  message, category):
 
 ##########################################################################
 
-#			PROGRAM STARTS HERE
+#					PROGRAM STARTS HERE
 
 #########################################################################
 
 printLogo()
-
-#for key in a_dict:
-#	print(key, '->', a_dict[key])
 
 # CATEGORY SETUP
 basic = []
@@ -188,11 +183,11 @@ try:
 
 	if (DISTRO == "DEBIAN"):
 		from debInstaller import debInstaller
-
 		debInstaller(software)
 
-
+	else:
+		print(colored.red("Your distro isn't actually supported, i'm sorry."))
 	
-except KeyError:
+except:
 	print("Goodbye!")
 	exit(0)
