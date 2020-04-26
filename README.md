@@ -1,7 +1,8 @@
-#Linix 
-![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
+#Linix  
 
 ##What is?
+![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
+
 Linix is a SO **configurator** written in bash and python3. It is designed to automatically install desidered software (provided from the software list and upgradble via .json) and import dependecies, ppa, source and choose the best installation method.
 
 With linix you can automatically:
