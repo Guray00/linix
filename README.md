@@ -10,6 +10,8 @@ With linix you can automatically:
 - ~~*Install fonts*~~
 - *~~Run scripts~~*
 
+[![Linix](https://i.imgur.com/p5VDxlT.png)
+
 ## Install
 For debian-based distro:
 ```bash
