@@ -40,8 +40,13 @@ def jsonParser():
 	
 	for file in os.listdir("./software/"):
 		if (file.endswith(".json") and file != "template.json"):
-
-			original = json.loads(open(os.path.join("./software/", file), "r").read())
+			
+			try:
+				original = json.loads(open(os.path.join("./software/", file), "r").read())
+			except:
+				badJson.append(file)
+				continue
+			
 			tmp = {}
 			
 			try:
