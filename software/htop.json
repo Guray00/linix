@@ -1,0 +1,14 @@
+{
+
+"display_name": "Htop",
+"category": "basic",
+"DEBIAN":{
+	"name":"htop",
+	"method": "apt"
+	}
+}
+
+
+
+
+

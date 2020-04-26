@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 from PyInquirer import style_from_dict, Token, prompt, Separator
-import json
 import os
 import sys
 from clint.textui import puts, colored
+import json
+
+from installMenu import installMenu
 
 DISTRO = sys.argv[sys.argv.index("--distro")+1]				#gets the running distro
 rows, columns = os.popen('stty size', 'r').read().split()
@@ -20,8 +22,6 @@ def printLogo():
 	distance      = ' '*int(distanceSize)
 	separator     = colored.red('='*int(distanceSize))
 
-
-
 	print(distance +"  "+"    __    _____   _______  __"+"  ")
 	print(distance +"  "+"   / /   /  _/ | / /  _/ |/ /"+"  ")
 	print(separator+"  "+"  / /    / //  |/ // / |   / "+"  "+separator+colored.red("="))
@@ -34,33 +34,49 @@ def printLogo():
 	distancePrint("your OS, we both know that if u are here you destroyed something...")
 	distancePrint("Therefore come on and config your machine (and pay attention next time)\n")
 	
-def questionMaker(names, ID,  message, category):
-	choices = []
+def jsonParser():
+	avaiableSoftware = {}
+	badJson = []
 	
-	i = 0
-	for j in category:
-		choices.append(Separator("\n== " + names[i] + " =="))
-		
-		for s in j:
-			choices.append({
-				'name': s["display_name"]
-			})
-		i+=1
-			
-	questions = [
-	    {
-		'type': 'checkbox',
-		'message': message,
-		'name': ID,
-		'choices': choices,
-		'validate': lambda answer: 'You must choose at least one program.' \
-		    if len(answer) == 0 else True
-	    }
-	]	
-	
+	for file in os.listdir("./software/"):
+		if (file.endswith(".json") and file != "template.json"):
 
-	return questions
-	
+			original = json.loads(open(os.path.join("./software/", file), "r").read())
+			tmp = {}
+			
+			try:
+				tmp["display_name"] = original["display_name"]
+
+				try:	category = original["category"].lower()
+				except: category = "other"
+
+				for key in original[DISTRO]:
+					tmp[key] = original[DISTRO][key]
+					
+				try: 
+					avaiableSoftware[category].append(tmp)
+
+				except:
+					avaiableSoftware[category] = []						
+					avaiableSoftware[category].append(tmp)
+					
+			except:
+				badJson.append(file)
+				pass
+
+
+	if (len(badJson) > 0):
+		for i in badJson:
+			print(colored.yellow("[W] WARNING: Bad json implemented: " +i))
+
+		print(colored.green("Continuing, NON fatal error."))
+		input(colored.green("Press [ENTER] to continue: "))
+		os.system("clear")
+		
+	return avaiableSoftware
+
+
+
 
 ##########################################################################
 
@@ -68,55 +84,12 @@ def questionMaker(names, ID,  message, category):
 
 #########################################################################
 
+
+
+avaiableSoftware = jsonParser()
 printLogo()
 
-# CATEGORY SETUP
-basic = []
-dev = []
-gaming = []
-cloud = []
-graphics = []
 
-
-categoriesString = ["basic", "dev", "gaming", "cloud", "graphics"]
-categories = []
-
-
-for i in categoriesString:
-	tmp = {
-  		"display_name": i
-	}
-	
-	categories.append(tmp)
-
-
-# IMPORTING JSONS
-for file in os.listdir("./software/dev"):
-	if file.endswith(".json"):
-		tmp = json.loads(open(os.path.join("./software/dev", file), "r").read())
-		dev.append(tmp)
-
-for file in os.listdir("./software/basic"):
-	if file.endswith(".json"):
-		tmp = json.loads(open(os.path.join("./software/basic", file), "r").read())
-		basic.append(tmp)		
-   			
-for file in os.listdir("./software/gaming"):
-	if file.endswith(".json"):
-		tmp = json.loads(open(os.path.join("./software/gaming", file), "r").read())
-		gaming.append(tmp)
-
-for file in os.listdir("./software/cloud"):
-	if file.endswith(".json"):
-		tmp = json.loads(open(os.path.join("./software/cloud", file), "r").read())
-		cloud.append(tmp)
-
-for file in os.listdir("./software/graphics"):
-	if file.endswith(".json"):
-		tmp = json.loads(open(os.path.join("./software/graphics", file), "r").read())
-		graphics.append(tmp)
-	
-	
 # SETTING UP GUI COLORS			
 style = style_from_dict({
     Token.Separator: '#FF0000',   #cc5454
@@ -129,61 +102,21 @@ style = style_from_dict({
 })
 
 
-# ASK CATEGORY
+
 try:
-	answ = prompt(questionMaker(["Categories"], "categories", "Which categories are u interested in?", [categories]), style=style)
 
+	#TODO: choose if u wanna install, config, run scripts etc
 
-	software = []
-	swHash = {}
+	wannaInstall = True
 
-	# GET THE LIST OF PROGRAMS FROM SELECTED CATEGORIES
-	for i in answ["categories"]:
-
-		tmp = []
-		if (i == "basic"):
-			for j in basic:
-				tmp.append(j) 	
-				swHash[j["display_name"]] = j	
-		
-		elif (i == "dev"):
-			for j in dev:
-				tmp.append(j)
-				swHash[j["display_name"]] = j	
-		
-		elif (i == "gaming"):
-			for j in gaming:
-				tmp.append(j)
-				swHash[j["display_name"]] = j
-		
-		elif (i == "cloud"):
-			for j in cloud:
-				tmp.append(j)
-				swHash[j["display_name"]] = j
-				
-		elif (i == "graphics"):
-			for j in graphics:
-				tmp.append(j)
-				swHash[j["display_name"]] = j
-				
-		software.append(tmp)
-		
-		
-	# ASK FOR SPECIFIC SOFTWARE
-	answ = prompt(questionMaker(["Basic", "Dev", "Gaming", "Cloud", "Graphics"], "software", "Which software do u wanna install?", software), style=style)
-
-	software = []
-	for i in answ["software"]:
-		software.append(swHash[i])
-		
-
-	# RUNS THE INSTALLER
-	#installerMain(software, "debian")
-
+	if (wannaInstall):
+		software = installMenu(avaiableSoftware, style)
 
 	if (DISTRO == "DEBIAN"):
-		from debInstaller import debInstaller
-		debInstaller(software)
+
+		if (wannaInstall):
+			from debInstaller import debInstaller
+			debInstaller(software)
 
 	else:
 		print(colored.red("Your distro isn't actually supported, i'm sorry."))
