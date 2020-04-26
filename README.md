@@ -9,9 +9,7 @@ With linix you can automatically:
 - *~~Install themes/icons~~*
 - ~~*Install fonts*~~
 - *~~Run scripts~~*
-
-[![Linix](https://i.imgur.com/p5VDxlT.png)
-
+![Linix](https://i.imgur.com/p5VDxlT.png)
 ## Install
 For debian-based distro:
 ```bash
