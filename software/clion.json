@@ -1,7 +1,10 @@
 {
-"name":"clion",
 "display_name": "Clion",
-"method": "snap"
+"category":"development",
+"DEBIAN":{
+	"name":"clion",
+	"method": "snap"
+}
 }
 
 

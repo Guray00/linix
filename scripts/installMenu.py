@@ -7,7 +7,7 @@ def softwareChooser(categories, ID,  message):
 	choices = []
 	
 	for j in categories:
-		choices.append(Separator("\n== " + j + " =="))
+		choices.append(Separator("\n== " + j.capitalize() + " =="))
 		
 		for s in categories[j]:
 			choices.append({

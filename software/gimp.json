@@ -1,7 +1,12 @@
 {
-"name":"gimp",
+
 "display_name": "Gimp",
-"method":"apt"
+"category":"graphics",
+"DEBIAN":{
+	"name":"gimp",
+	"method":"apt"
+}
+
 }
 
 

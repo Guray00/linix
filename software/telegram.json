@@ -1,8 +1,11 @@
 {
-"name":"telegram",
 "display_name": "Telegram",
-"ppa":"ppa:atareao/telegram",
-"method": "ppa"
+"category":"web",
+	"DEBIAN":{
+	"name":"telegram",
+	"ppa":"ppa:atareao/telegram",
+	"method": "ppa"
+	}
 }
 
 

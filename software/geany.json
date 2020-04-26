@@ -1,7 +1,10 @@
 {
-"name":"geany",
 "display_name": "Geany",
-"method": "apt"
+"category":"development",
+"DEBIAN":{
+	"name":"geany",
+	"method": "apt"
+	}
 }
 
 

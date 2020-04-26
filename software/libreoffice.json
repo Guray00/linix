@@ -1,8 +1,12 @@
 {
-"name":"libreoffice",
 "display_name": "LibreOffice",
-"ppa":"ppa:libreoffice/ppa",
-"method": "ppa"
+"category":"basic",
+"DEBIAN":{
+	"name":"libreoffice",
+	"ppa":"ppa:libreoffice/ppa",
+	"method": "ppa"
+	}
+
 }
 
 

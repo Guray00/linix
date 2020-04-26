@@ -1,7 +1,11 @@
 {
-"name":"pycharm-professional",
 "display_name": "PyCharm (Professional)",
-"method": "snap"
+"category":"development",
+"DEBIAN":{
+	"name":"pycharm-professional",
+	"method": "snap"
+	}
+
 }
 
 

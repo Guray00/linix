@@ -1,7 +1,11 @@
 {
-"name":"neofetch",
 "display_name": "Neofetch",
-"method": "apt"
+"category":"basic",
+"DEBIAN":{
+	"name":"neofetch",
+	"method": "apt"
+}
+
 }
 
 
