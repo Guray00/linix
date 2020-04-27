@@ -124,7 +124,7 @@ try:
 			debInstaller(software)
 
 	else:
-		print(colored.red("Your distro isn't actually supported, i'm sorry."))
+		print(colored.red("Your distro isn't supported yet, I'm sorry."))
 	
 except:
 	print("Goodbye!")

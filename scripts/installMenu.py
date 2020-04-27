@@ -62,7 +62,7 @@ def swCategoryChooser(names, ID,  message):
 def installMenu(sw, style):
 	
 	if(len(sw) == 0):
-		print(colored.red("[X] At the moment there aren't supported software..."))
+		print(colored.red("[X] There isn't any supported software at the moment..."))
 		print(colored.red(" -  Nothing will be installed"))
 		return False
 
