@@ -72,7 +72,7 @@ def jsonParser():
 
 	if (len(badJson) > 0):
 		for i in badJson:
-			print(colored.yellow("[W] WARNING: Bad json implemented: " +i))
+			print(colored.yellow("[W] WARNING: Bad json implemented (or non supported platform): " +i))
 
 		print(colored.green("Continuing, NON fatal error."))
 		input(colored.green("Press [ENTER] to continue: "))

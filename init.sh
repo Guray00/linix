@@ -71,7 +71,7 @@ then
 fi
 
 
-pip3 install virtualenv >>.log 2>&1
+pip3 install virtualenv --user>>.log 2>&1
 
 if [ -d ".venv" ]
 then

@@ -1,0 +1,14 @@
+{
+
+"display_name": "Steam",
+"category": "gaming",
+"DEBIAN":{
+	"name":"steam",
+	"method": "apt"
+	}
+}
+
+
+
+
+
