@@ -1,6 +1,6 @@
 {
 "display_name": "Opera",
-"category":"basic",
+"category":"web",
 "DEBIAN":{
 	"name":"opera-stable",
 	"method": "source",

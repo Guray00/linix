@@ -1,6 +1,6 @@
 {
 "display_name": "Chrome",
-"category":"basic",
+"category":"web",
 "DEBIAN":{
 	"name":"chrome-gnome-shell",
 	"method":"dpkg",

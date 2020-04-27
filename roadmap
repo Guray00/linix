@@ -1,0 +1,30 @@
+STARTUP SCRIPTS
+syncthing -no-browser
+
+#GNOME TERMINAL PROFILE
+https://unix.stackexchange.com/questions/448811/how-to-export-a-gnome-terminal-profile
+
+FONTS
+Fira Code
+
+
+CTF
+pip3 install z3-solver
+pip3 install pwntools
+
+#wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
+
+#cd /tmp
+#git clone https://github.com/bkerler/ghidra_installer
+#./install-ghidra.sh
+
+
+
+
+WSL SUPPORT
+
+
+####################################
+WINDOWS ONLY PROGRAMS
+google drive
+

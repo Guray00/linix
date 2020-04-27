@@ -1,0 +1,14 @@
+{
+
+"display_name": "Vlc",
+"category": "media",
+"DEBIAN":{
+	"name":"vlc",
+	"method": "apt"
+	}
+}
+
+
+
+
+
