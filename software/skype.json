@@ -1,0 +1,14 @@
+{
+"display_name": "Skype",
+"category":"web",
+"DEBIAN":{
+	"name": "skypeforlinux",
+	"method": "dpkg",
+	"dpkg": "/tmp/skype.deb",
+	"wget": "wget -O /tmp/skype.deb \"https://go.skype.com/skypeforlinux-64.deb\""
+}
+
+}
+
+
+

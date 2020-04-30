@@ -1,0 +1,14 @@
+{
+"display_name": "GitHub Desktop (unofficial)",
+"category":"development",
+"DEBIAN":{
+	"name": "github-desktop",
+	"method": "dpkg",
+	"dpkg": "/tmp/github.deb",
+	"wget": "wget -O /tmp/github.deb \"https://github.com/shiftkey/desktop/releases/download/release-2.4.1-linux1/GitHubDesktop-linux-2.4.1-linux1.deb\""
+}
+
+}
+
+
+

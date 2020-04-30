@@ -1,11 +1,35 @@
-aggiungere descrizione programmi e [method] <- italic e bold
+#SOFTWARE
+team viewer 
+microsoft teams
 
+
+##SUPPORT	
+add 32bit support
+
+ubuntu add models to folder
+
+
+aggiungere descrizione programmi e [method] <-- italic e bold
+
+aggiungere supporto estensioni
+
+extension
+
+	change login screen wallpaper
+
+	Mac features
+		gnome
+			albert install and config
+			gnome shortcut for albert toogle
+			install extension extended gestures
+			
 
 STARTUP SCRIPTS
 syncthing -no-browser
 
 #GNOME TERMINAL PROFILE
 https://unix.stackexchange.com/questions/448811/how-to-export-a-gnome-terminal-profile
+
 
 FONTS
 Fira Code

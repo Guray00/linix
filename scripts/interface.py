@@ -52,8 +52,13 @@ def jsonParser():
 			try:
 				tmp["display_name"] = original["display_name"]
 
-				try:	category = original["category"].lower()
-				except: category = "other"
+				try:	
+					category = original["category"].lower()
+					if (category == ""):
+						category = "other"
+						
+				except:
+					category = "other"
 
 				for key in original[DISTRO]:
 					tmp[key] = original[DISTRO][key]

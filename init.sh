@@ -22,6 +22,7 @@ echo "Detected system type: " $DISTRO
 
 ######
 
+
 if [ $DISTRO == "DEBIAN" ]
 then
 	dpkg -s "python3" >>.log 2>&1 

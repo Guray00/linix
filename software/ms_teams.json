@@ -1,0 +1,14 @@
+{
+"display_name": "MS Teams",
+"category":"web",
+"DEBIAN":{
+	"name": "teams",
+	"method": "dpkg",
+	"dpkg": "/tmp/ms_teams.deb",
+	"wget": "wget -O /tmp/ms_teams.deb \"https://go.microsoft.com/fwlink/p/?linkid=2112886&clcid=0x410\""
+}
+
+}
+
+
+

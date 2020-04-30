@@ -1,0 +1,14 @@
+{
+"display_name": "Team Viewer",
+"category":"web",
+"DEBIAN":{
+	"name": "teamviewer",
+	"method": "dpkg",
+	"dpkg": "/tmp/teamviewer.deb",
+	"wget": "wget -O /tmp/teamviewer.deb \"https://download.teamviewer.com/download/linux/teamviewer_amd64.deb\""
+}
+
+}
+
+
+
